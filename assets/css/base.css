@@ -64,6 +64,11 @@
    ============================================================================ */
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Браузерное правило [hidden]{display:none} слабее любого авторского display.
+   Из-за этого «.slots-taken { display: flex }» показывала пустую красную
+   рамку над расписанием, хотя в разметке стоял атрибут hidden. */
+[hidden] { display: none !important; }
+
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
