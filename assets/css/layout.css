@@ -652,3 +652,19 @@
 /* Отступ снизу, чтобы прилипающий док не накрывал последний блок */
 body.has-dock main { padding-bottom: 92px; }
 @media (min-width: 960px) { body.has-dock main { padding-bottom: 0; } }
+
+/* Запасной текст внутри блока карты: виден, пока карта не построилась,
+   и остаётся насовсем, если библиотека не загрузилась или JS отключён. */
+.map-embed__fallback {
+  display: grid;
+  place-content: center;
+  gap: 0.35rem;
+  height: 100%;
+  min-height: 300px;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--muted);
+}

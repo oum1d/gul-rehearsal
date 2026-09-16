@@ -22,7 +22,14 @@
     var lat = parseFloat(box.getAttribute('data-lat'));
     var lon = parseFloat(box.getAttribute('data-lon'));
     var zoom = parseInt(box.getAttribute('data-zoom'), 10) || 16;
+
+    /* Библиотека не загрузилась или координаты битые — оставляем то, что
+       уже лежит внутри блока: адрес и ссылку на карту. Пустой рамки на
+       месте карты человек не должен увидеть никогда. */
     if (isNaN(lat) || isNaN(lon) || typeof L === 'undefined') { return; }
+
+    /* Запасной текст убираем только теперь, когда карта точно строится */
+    box.innerHTML = '';
 
     var map = L.map(box, {
       center: [lat, lon],
