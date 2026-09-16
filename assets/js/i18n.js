@@ -137,7 +137,6 @@ window.GUL_I18N = {
       title: 'Как добраться',
       note: 'Вход со двора. Чёрная дверь без вывески, слева от ворот. Если стоите перед фасадом с окнами — обойдите здание.',
       frameTitle: 'Карта: ул. Фабрична 12, Вроцлав',
-      bigger: 'Открыть крупнее',
       photoAlt: 'Бетонная лестница к чёрной двери без вывески в кирпичной стене',
       hoursTitle: 'Часы работы',
       hoursValue: 'Ежедневно, 10:00 — 06:00'
@@ -435,7 +434,6 @@ window.GUL_I18N = {
       title: 'Jak dojechać',
       note: 'Wejście od podwórza. Czarne drzwi bez szyldu, po lewej od bramy. Jeśli stoisz przed elewacją z oknami — obejdź budynek.',
       frameTitle: 'Mapa: ul. Fabryczna 12, Wrocław',
-      bigger: 'Otwórz większą',
       photoAlt: 'Betonowe schody do czarnych drzwi bez szyldu w ceglanej ścianie',
       hoursTitle: 'Godziny otwarcia',
       hoursValue: 'Codziennie, 10:00 — 06:00'
@@ -733,7 +731,6 @@ window.GUL_I18N = {
       title: 'How to get here',
       note: 'Entrance from the yard. Black door with no sign, to the left of the gate. If you are standing at the facade with windows, walk around the building.',
       frameTitle: 'Map: Fabryczna 12, Wrocław',
-      bigger: 'Open larger',
       photoAlt: 'Concrete stairs leading to a black door with no sign in a brick wall',
       hoursTitle: 'Opening hours',
       hoursValue: 'Every day, 10:00 — 06:00'
