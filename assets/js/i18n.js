@@ -136,8 +136,9 @@ window.GUL_I18N = {
     map: {
       title: 'Как добраться',
       note: 'Вход со двора. Чёрная дверь без вывески, слева от ворот. Если стоите перед фасадом с окнами — обойдите здание.',
-      placeholder: 'Здесь будет карта',
-      photoPlaceholder: 'Фото входа',
+      frameTitle: 'Карта: ул. Фабрична 12, Вроцлав',
+      bigger: 'Открыть крупнее',
+      photoAlt: 'Бетонная лестница к чёрной двери без вывески в кирпичной стене',
       hoursTitle: 'Часы работы',
       hoursValue: 'Ежедневно, 10:00 — 06:00'
     },
@@ -433,8 +434,9 @@ window.GUL_I18N = {
     map: {
       title: 'Jak dojechać',
       note: 'Wejście od podwórza. Czarne drzwi bez szyldu, po lewej od bramy. Jeśli stoisz przed elewacją z oknami — obejdź budynek.',
-      placeholder: 'Tu będzie mapa',
-      photoPlaceholder: 'Zdjęcie wejścia',
+      frameTitle: 'Mapa: ul. Fabryczna 12, Wrocław',
+      bigger: 'Otwórz większą',
+      photoAlt: 'Betonowe schody do czarnych drzwi bez szyldu w ceglanej ścianie',
       hoursTitle: 'Godziny otwarcia',
       hoursValue: 'Codziennie, 10:00 — 06:00'
     },
@@ -730,8 +732,9 @@ window.GUL_I18N = {
     map: {
       title: 'How to get here',
       note: 'Entrance from the yard. Black door with no sign, to the left of the gate. If you are standing at the facade with windows, walk around the building.',
-      placeholder: 'Map goes here',
-      photoPlaceholder: 'Photo of the entrance',
+      frameTitle: 'Map: Fabryczna 12, Wrocław',
+      bigger: 'Open larger',
+      photoAlt: 'Concrete stairs leading to a black door with no sign in a brick wall',
       hoursTitle: 'Opening hours',
       hoursValue: 'Every day, 10:00 — 06:00'
     },
@@ -938,10 +941,19 @@ window.I18N = (function () {
       if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
     } catch (e) { /* приватный режим — просто идём дальше */ }
 
-    var nav = (navigator.language || 'ru').slice(0, 2).toLowerCase();
-    if (SUPPORTED.indexOf(nav) !== -1) return nav;
-    // украиноязычному и белорусскоязычному посетителю русский ближе английского
-    if (nav === 'uk' || nav === 'be') return 'ru';
+    /* Языки системы. Смотрим весь список из настроек, а не только первый:
+       в Польше обычная настройка — «uk, pl, en». Первый язык мы не знаем,
+       зато второй подходит человеку лучше, чем русский по умолчанию. */
+    var list = (navigator.languages && navigator.languages.length)
+      ? navigator.languages
+      : [navigator.language || 'ru'];
+
+    for (var i = 0; i < list.length; i++) {
+      var code = String(list[i] || '').slice(0, 2).toLowerCase();
+      if (SUPPORTED.indexOf(code) !== -1) return code;
+      // украиноязычному и белорусскоязычному посетителю русский ближе английского
+      if (code === 'uk' || code === 'be') return 'ru';
+    }
     return 'ru';
   }
 

@@ -303,17 +303,25 @@
       </div>
 
       <div class="grid-2">
-        <div class="map-placeholder" data-reveal>
-          <span class="map-pin" aria-hidden="true">◉</span>
-          <span data-i18n="map.placeholder">Здесь будет карта</span>
-          <span class="mono" data-contact="address">ул. Фабрична 12, Вроцлав</span>
+        <div class="map-embed" data-reveal>
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=16.9808%2C51.1063%2C16.9928%2C51.1119&amp;layer=mapnik&amp;marker=51.1090617%2C16.9867689"
+            title="Карта: ул. Фабрична 12, Вроцлав" data-i18n-attr="title:map.frameTitle"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <a class="map-embed__link" href="https://www.openstreetmap.org/?mlat=51.10906&amp;mlon=16.98677#map=17/51.10906/16.98677"
+             target="_blank" rel="noopener noreferrer" data-i18n="map.bigger">Открыть крупнее</a>
         </div>
 
         <div data-reveal data-reveal-delay="80">
-          <div class="poster poster--wide" role="img" aria-label="Фото входа">
-            <span class="poster__letter" aria-hidden="true">IN</span>
-            <span class="poster__note" data-i18n="map.photoPlaceholder">Фото входа</span>
-          </div>
+          <figure class="gallery__figure">
+            <img src="assets/img/rooms/entrance-sm.jpg"
+                 srcset="assets/img/rooms/entrance-sm.jpg 640w, assets/img/rooms/entrance-lg.jpg 1280w"
+                 sizes="(min-width: 860px) 45vw, 100vw"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 alt="Бетонная лестница к чёрной двери без вывески в кирпичной стене"
+                 data-i18n-attr="alt:map.photoAlt">
+            <figcaption class="gallery__credit" data-credit="entrance"></figcaption>
+          </figure>
           <p style="margin-top:1rem" data-i18n="map.note">Вход со двора. Чёрная дверь без вывески, слева от ворот. Если стоите перед фасадом с окнами — обойдите здание.</p>
           <p class="mono muted"><span data-i18n="map.hoursTitle">Часы работы</span>: <span data-contact="hours">10:00 — 06:00</span></p>
         </div>

@@ -480,6 +480,46 @@
 }
 .map-pin { font-size: 2rem; color: var(--acid); line-height: 1; }
 
+/* Карта OpenStreetMap в iframe: ключа и регистрации не требует.
+   Кадр светлый, поэтому выворачиваем его в тёмный — светлое пятно посреди
+   чёрной страницы било бы по глазам ночью, а сайт смотрят как раз ночью.
+   invert + hue-rotate возвращает воде синий цвет после выворота. */
+.map-embed {
+  position: relative;
+  min-height: 300px;
+  border: var(--bw) solid var(--line);
+  border-radius: var(--r);
+  overflow: hidden;
+  background-color: var(--card-2);
+}
+.map-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  border: 0;
+  filter: invert(0.9) hue-rotate(180deg) grayscale(0.5) contrast(0.92) brightness(1.05);
+}
+/* Кнопка стоит сверху: внизу кадра OpenStreetMap печатает свой копирайт,
+   а его перекрывать нельзя — это условие лицензии данных. */
+.map-embed__link {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  background: var(--bg);
+  border: var(--bw) solid var(--line);
+  border-radius: var(--r);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: var(--acid);
+}
+.map-embed__link:hover,
+.map-embed__link:focus-visible { background: var(--card); }
+
 /* ============================================================================
    АВТОРЫ ФОТОГРАФИЙ
    ============================================================================ */

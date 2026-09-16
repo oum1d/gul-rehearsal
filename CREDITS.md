@@ -36,6 +36,7 @@
 | d-3 | Комната D, галерея | Steve Knight | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [A second Hammond and Leslie in the C, Rockfieldoach House studio](https://commons.wikimedia.org/wiki/File:A_second_Hammond_and_Leslie_in_the_C,_Rockfieldoach_House_studio_%2853720620008%29.jpg) |
 | d-4 | Комната D, галерея | Steve Knight | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Hammond organ and Leslie speaker Studio 2](https://commons.wikimedia.org/wiki/File:Hammond_organ_and_Leslie_speaker_Studio_2_%2853720407971%29.jpg) |
 | studio | Главная, баннер студии записи | Steve Knight | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Coach House control room](https://commons.wikimedia.org/wiki/File:Coach_House_control_room_%2853720408036%29.jpg) |
+| entrance | Главная, фото входа | Dietmar Rabich | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Dülmen, Spinnerei Bendix, Jugendzentrum -Neue Spinnerei- -- 2013 -- 00074](https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Spinnerei_Bendix,_Jugendzentrum_-Neue_Spinnerei-_--_2013_--_00074.jpg) |
 
 ## О лицензиях
 

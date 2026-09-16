@@ -202,7 +202,8 @@ window.GUL_DATA = {
     "d-2": { author: "Steve Knight", license: "CC BY 2.0", licenseUrl: "https://creativecommons.org/licenses/by/2.0", source: "https://commons.wikimedia.org/wiki/File:Studio_2_control_room_(53720619853).jpg" },
     "d-3": { author: "Steve Knight", license: "CC BY 2.0", licenseUrl: "https://creativecommons.org/licenses/by/2.0", source: "https://commons.wikimedia.org/wiki/File:A_second_Hammond_and_Leslie_in_the_C,_Rockfieldoach_House_studio_(53720620008).jpg" },
     "d-4": { author: "Steve Knight", license: "CC BY 2.0", licenseUrl: "https://creativecommons.org/licenses/by/2.0", source: "https://commons.wikimedia.org/wiki/File:Hammond_organ_and_Leslie_speaker_Studio_2_(53720407971).jpg" },
-    "studio": { author: "Steve Knight", license: "CC BY 2.0", licenseUrl: "https://creativecommons.org/licenses/by/2.0", source: "https://commons.wikimedia.org/wiki/File:Coach_House_control_room_(53720408036).jpg" }
+    "studio": { author: "Steve Knight", license: "CC BY 2.0", licenseUrl: "https://creativecommons.org/licenses/by/2.0", source: "https://commons.wikimedia.org/wiki/File:Coach_House_control_room_(53720408036).jpg" },
+    "entrance": { author: "Dietmar Rabich", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0", source: "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Spinnerei_Bendix,_Jugendzentrum_-Neue_Spinnerei-_--_2013_--_00074.jpg" }
   },
   // photoCredits:end
 
