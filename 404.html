@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="pages.notfoundTitle">Страница не найдена — ГУЛ</title>
+<meta name="description" content="Такой страницы на сайте базы ГУЛ нет.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0E0E0E">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main" data-i18n="common.skipToContent">Перейти к содержимому</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="index.html">
+      <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+      <span>
+        <span data-i18n="brand.name">ГУЛ</span>
+        <span class="logo__sub" data-i18n="brand.tagline">Репбаза и студия · Вроцлав</span>
+      </span>
+    </a>
+
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Язык" data-i18n-attr="aria-label:nav.lang">
+        <button class="lang__btn" type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button class="lang__btn" type="button" data-lang="pl" aria-pressed="false">PL</button>
+        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--primary btn--sm" href="rooms.html" data-i18n="nav.book">Забронировать</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container centered">
+    <p class="error-code" aria-hidden="true">404</p>
+
+    <div>
+      <h1 data-i18n="notfound.title">Такой комнаты у нас нет</h1>
+      <p class="lead muted" style="margin-top:1rem" data-i18n="notfound.text">Страница потерялась где-то между цехом и подвалом. Бывает.</p>
+    </div>
+
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="index.html" data-i18n="notfound.home">На главную</a>
+      <a class="btn btn--ghost" href="rooms.html" data-i18n="notfound.rooms">К комнатам</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__bottom" style="margin-top:0;border-top:0">
+      <span>© <span data-year>2026</span> <span data-i18n="brand.name">ГУЛ</span></span>
+      <span data-i18n="footer.rights">Все права защищены</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data/rooms.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+</body>
+</html>

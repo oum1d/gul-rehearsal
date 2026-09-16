@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="pages.bookedTitle">Заявка принята — ГУЛ</title>
+<meta name="description" content="Заявка на бронь принята. Номер брони, время и напоминание, как найти вход.">
+<meta name="robots" content="noindex, nofollow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Заявка принята — ГУЛ">
+<meta name="theme-color" content="#0E0E0E">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main" data-i18n="common.skipToContent">Перейти к содержимому</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="index.html">
+      <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+      <span>
+        <span data-i18n="brand.name">ГУЛ</span>
+        <span class="logo__sub" data-i18n="brand.tagline">Репбаза и студия · Вроцлав</span>
+      </span>
+    </a>
+
+    <div class="header-tools">
+      <a class="header-phone" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a>
+      <div class="lang" role="group" aria-label="Язык" data-i18n-attr="aria-label:nav.lang">
+        <button class="lang__btn" type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button class="lang__btn" type="button" data-lang="pl" aria-pressed="false">PL</button>
+        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container centered">
+
+    <span class="stamp" data-i18n="booked.title">Заявка принята</span>
+
+    <div>
+      <h1 data-i18n="booked.title">Заявка принята</h1>
+      <p class="lead muted" style="margin-top:1rem" data-i18n="booked.sub">Мы перезвоним в течение часа. Ночью — утром.</p>
+    </div>
+
+    <div class="card" data-booked></div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2 style="font-size:1.125rem;margin-bottom:0.75rem" data-i18n="booked.reminderTitle">Не потеряйте вход</h2>
+        <p class="muted" data-i18n="booked.reminder">Вход со двора. Чёрная дверь без вывески, слева от ворот. Если стоите перед фасадом с окнами — обойдите здание.</p>
+        <p class="mono" style="margin-top:0.75rem" data-contact="address">ул. Фабрична 12, Вроцлав</p>
+      </div>
+
+      <div class="card">
+        <h2 style="font-size:1.125rem;margin-bottom:0.75rem" data-i18n="booked.cancelTitle">Планы изменились?</h2>
+        <p class="muted" data-i18n="booked.cancel">Позвоните до начала слота — отменим без вопросов. Отмена больше чем за 3 часа ничего не стоит.</p>
+        <p style="margin-top:0.75rem"><a class="mono" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a></p>
+      </div>
+    </div>
+
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="index.html" data-i18n="booked.home">На главную</a>
+      <a class="btn btn--ghost" href="rooms.html" data-i18n="booked.more">Забронировать ещё</a>
+    </div>
+
+    <p class="demo-notice" data-i18n="common.demoNotice">Демонстрационная работа. Занятость, адрес и телефон — заглушки, заявки никуда не отправляются. Фотографии — свободные снимки других студий с Wikimedia Commons.</p>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__bottom" style="margin-top:0;border-top:0">
+      <span>© <span data-year>2026</span> <span data-i18n="brand.name">ГУЛ</span></span>
+      <span data-i18n="footer.rights">Все права защищены</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data/rooms.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/booked.js"></script>
+</body>
+</html>

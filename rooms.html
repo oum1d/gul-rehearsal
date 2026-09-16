@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="pages.roomsTitle">Комнаты — ГУЛ, репбаза во Вроцлаве</title>
+<meta name="description" data-i18n-attr="content:pages.roomsDesc" content="Четыре репетиционные комнаты от 12 до 42 м². Барабаны Tama, комбики, пульт на 16 каналов. Фильтр по оборудованию, площади, цене и времени суток.">
+
+<link rel="canonical" href="https://oum1d.github.io/gul-rehearsal/rooms.html">
+<link rel="alternate" hreflang="ru" href="https://oum1d.github.io/gul-rehearsal/rooms.html?lang=ru">
+<link rel="alternate" hreflang="pl" href="https://oum1d.github.io/gul-rehearsal/rooms.html?lang=pl">
+<link rel="alternate" hreflang="en" href="https://oum1d.github.io/gul-rehearsal/rooms.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://oum1d.github.io/gul-rehearsal/rooms.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Комнаты — ГУЛ">
+<meta property="og:description" content="Четыре репетиционные комнаты во Вроцлаве. Выберите по оборудованию и цене.">
+<meta property="og:url" content="https://oum1d.github.io/gul-rehearsal/rooms.html">
+<meta name="theme-color" content="#0E0E0E">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main" data-i18n="common.skipToContent">Перейти к содержимому</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="index.html">
+      <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+      <span>
+        <span data-i18n="brand.name">ГУЛ</span>
+        <span class="logo__sub" data-i18n="brand.tagline">Репбаза и студия · Вроцлав</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" data-i18n-attr="aria-label:nav.main" aria-label="Основная навигация">
+      <ul>
+        <li><a href="rooms.html" data-i18n="nav.rooms">Комнаты</a></li>
+        <li><a href="pricing.html" data-i18n="nav.pricing">Тарифы</a></li>
+        <li><a href="index.html#studio" data-i18n="nav.studio">Студия</a></li>
+        <li><a href="about.html" data-i18n="nav.contacts">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <a class="header-phone" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a>
+      <div class="lang" role="group" aria-label="Язык" data-i18n-attr="aria-label:nav.lang">
+        <button class="lang__btn" type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button class="lang__btn" type="button" data-lang="pl" aria-pressed="false">PL</button>
+        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--primary btn--sm header-cta" href="rooms.html" data-i18n="nav.book">Забронировать</a>
+      <button class="icon-btn burger" id="burger" type="button" aria-expanded="false"
+              aria-controls="mobile-nav" aria-label="Меню" data-i18n-attr="aria-label:nav.menu">≡</button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav__backdrop" data-close-menu></div>
+  <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Меню" data-i18n-attr="aria-label:nav.menu">
+    <div class="mobile-nav__top">
+      <span class="logo">
+        <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+        <span data-i18n="brand.name">ГУЛ</span>
+      </span>
+      <button class="icon-btn" type="button" data-close-menu aria-label="Закрыть" data-i18n-attr="aria-label:nav.close">×</button>
+    </div>
+    <nav class="mobile-nav__list" data-i18n-attr="aria-label:nav.main">
+      <a href="rooms.html" data-i18n="nav.rooms">Комнаты</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Тарифы</a>
+      <a href="index.html#studio" data-i18n="nav.studio">Студия</a>
+      <a href="about.html" data-i18n="nav.contacts">Контакты</a>
+    </nav>
+    <a class="btn btn--primary btn--block" href="rooms.html" data-i18n="nav.book">Забронировать</a>
+    <a class="mono" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a>
+  </div>
+</div>
+
+<main id="main">
+  <section class="section section--tight">
+    <div class="container">
+
+      <div class="section__head">
+        <div>
+          <p class="eyebrow"><span data-count>—</span></p>
+          <h1 data-i18n="catalog.title">Комнаты</h1>
+        </div>
+
+        <div class="chips">
+          <label class="field__label" for="sort" data-i18n="catalog.sort">Сортировка</label>
+          <select class="field__control select" id="sort" data-sort style="min-height:40px;width:auto">
+            <option value="popular" data-i18n="catalog.sortPopular">По популярности</option>
+            <option value="price" data-i18n="catalog.sortPrice">По цене</option>
+            <option value="area" data-i18n="catalog.sortArea">По площади</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn btn--ghost btn--block filters-toggle" type="button"
+              data-filters-toggle aria-expanded="false" aria-controls="filters"
+              data-i18n="catalog.filters" style="margin-bottom:1rem">Фильтры</button>
+
+      <div class="catalog">
+
+        <!-- ФИЛЬТРЫ ------------------------------------------------------- -->
+        <form class="filters" id="filters" data-filters hidden onsubmit="return false">
+
+          <fieldset class="filters__group">
+            <legend class="filters__legend" data-i18n="catalog.area">Площадь</legend>
+            <div class="filters__options">
+              <button class="opt" type="button" data-filter="area" data-value="s" aria-pressed="false" data-i18n="catalog.areaS">до 20 м²</button>
+              <button class="opt" type="button" data-filter="area" data-value="m" aria-pressed="false" data-i18n="catalog.areaM">20–35 м²</button>
+              <button class="opt" type="button" data-filter="area" data-value="l" aria-pressed="false" data-i18n="catalog.areaL">35+ м²</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="filters__group">
+            <legend class="filters__legend" data-i18n="catalog.gear">Оборудование</legend>
+            <div class="filters__options">
+              <button class="opt" type="button" data-filter="gear" data-value="drums" aria-pressed="false" data-i18n="catalog.gearDrums">Барабаны</button>
+              <button class="opt" type="button" data-filter="gear" data-value="bass" aria-pressed="false" data-i18n="catalog.gearBass">Бас-комбик</button>
+              <button class="opt" type="button" data-filter="gear" data-value="mics" aria-pressed="false" data-i18n="catalog.gearMics">Микрофоны</button>
+              <button class="opt" type="button" data-filter="gear" data-value="mixer" aria-pressed="false" data-i18n="catalog.gearMixer">Пульт</button>
+              <button class="opt" type="button" data-filter="gear" data-value="keys" aria-pressed="false" data-i18n="catalog.gearKeys">Клавиши</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="filters__group">
+            <legend class="filters__legend" data-i18n="catalog.price">Цена за час</legend>
+            <label class="sr-only" for="price-range" data-i18n="catalog.price">Цена за час</label>
+            <input class="range" type="range" id="price-range" data-price-range min="30" max="85" step="5" value="85">
+            <output class="mono acid" data-price-out>до 85 zł</output>
+          </fieldset>
+
+          <fieldset class="filters__group">
+            <legend class="filters__legend" data-i18n="catalog.time">Время</legend>
+            <div class="filters__options">
+              <button class="opt" type="button" data-filter="time" data-value="day" aria-pressed="false" data-i18n="catalog.timeDay">День</button>
+              <button class="opt" type="button" data-filter="time" data-value="evening" aria-pressed="false" data-i18n="catalog.timeEvening">Вечер</button>
+              <button class="opt" type="button" data-filter="time" data-value="night" aria-pressed="false" data-i18n="catalog.timeNight">Ночь</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="filters__group" style="border-bottom:0">
+            <div class="filters__options">
+              <button class="opt" type="button" data-only-free aria-pressed="false" data-i18n="catalog.onlyFree">Только свободные сегодня</button>
+            </div>
+          </fieldset>
+        </form>
+
+        <!-- ВЫДАЧА -------------------------------------------------------- -->
+        <div>
+          <div class="catalog__bar">
+            <div class="chips" data-chips aria-label="Активные фильтры" data-i18n-attr="aria-label:catalog.activeFilters"></div>
+          </div>
+
+          <div class="grid-rooms" data-results></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <span class="logo">
+          <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+          <span data-i18n="brand.name">ГУЛ</span>
+        </span>
+        <p class="muted" style="margin-top:0.75rem" data-i18n="brand.tagline">Репбаза и студия · Вроцлав</p>
+      </div>
+      <div>
+        <h3 data-i18n="footer.nav">Разделы</h3>
+        <ul>
+          <li><a href="rooms.html" data-i18n="nav.rooms">Комнаты</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Тарифы</a></li>
+          <li><a href="index.html#studio" data-i18n="nav.studio">Студия</a></li>
+          <li><a href="about.html" data-i18n="nav.contacts">Контакты</a></li>
+          <li><a href="about.html#rules" data-i18n="common.rulesLink">Правила базы</a></li>
+          <li><a href="credits.html" data-i18n="common.photoCredits">Авторы фото</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.contacts">Контакты</h3>
+        <ul>
+          <li><a class="mono" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a></li>
+          <li><a class="mono" href="mailto:hello@gul.example" data-contact="email">hello@gul.example</a></li>
+          <li><a class="mono" href="https://instagram.com/" rel="noopener noreferrer" target="_blank" data-contact="instagram">@gul.wroclaw</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.hours">Часы работы</h3>
+        <p class="mono" data-contact="hours">10:00 — 06:00</p>
+        <p class="mono muted" data-contact="address">ул. Фабрична 12, Вроцлав</p>
+      </div>
+    </div>
+
+    <p class="demo-notice" style="margin-top:2rem" data-i18n="common.demoNotice">Демонстрационная работа. Занятость, адрес и телефон — заглушки, заявки никуда не отправляются. Фотографии — свободные снимки других студий с Wikimedia Commons.</p>
+
+    <div class="site-footer__bottom">
+      <span>© <span data-year>2026</span> <span data-i18n="brand.name">ГУЛ</span></span>
+      <span data-i18n="footer.rights">Все права защищены</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data/rooms.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/booking.js"></script>
+<script src="assets/js/cards.js"></script>
+<script src="assets/js/catalog.js"></script>
+</body>
+</html>

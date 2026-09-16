@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="pages.creditsTitle">Авторы фотографий — ГУЛ</title>
+<meta name="description" content="Авторы и лицензии фотографий на сайте репбазы ГУЛ.">
+<meta name="robots" content="noindex, follow">
+
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E0E0E">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main" data-i18n="common.skipToContent">Перейти к содержимому</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="index.html">
+      <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+      <span>
+        <span data-i18n="brand.name">ГУЛ</span>
+        <span class="logo__sub" data-i18n="brand.tagline">Репбаза и студия · Вроцлав</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" data-i18n-attr="aria-label:nav.main" aria-label="Основная навигация">
+      <ul>
+        <li><a href="rooms.html" data-i18n="nav.rooms">Комнаты</a></li>
+        <li><a href="pricing.html" data-i18n="nav.pricing">Тарифы</a></li>
+        <li><a href="index.html#studio" data-i18n="nav.studio">Студия</a></li>
+        <li><a href="about.html" data-i18n="nav.contacts">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <a class="header-phone" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a>
+      <div class="lang" role="group" aria-label="Язык" data-i18n-attr="aria-label:nav.lang">
+        <button class="lang__btn" type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button class="lang__btn" type="button" data-lang="pl" aria-pressed="false">PL</button>
+        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--primary btn--sm header-cta" href="rooms.html" data-i18n="nav.book">Забронировать</a>
+      <button class="icon-btn burger" id="burger" type="button" aria-expanded="false"
+              aria-controls="mobile-nav" aria-label="Меню" data-i18n-attr="aria-label:nav.menu">≡</button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav__backdrop" data-close-menu></div>
+  <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Меню" data-i18n-attr="aria-label:nav.menu">
+    <div class="mobile-nav__top">
+      <span class="logo">
+        <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+        <span data-i18n="brand.name">ГУЛ</span>
+      </span>
+      <button class="icon-btn" type="button" data-close-menu aria-label="Закрыть" data-i18n-attr="aria-label:nav.close">×</button>
+    </div>
+    <nav class="mobile-nav__list" data-i18n-attr="aria-label:nav.main">
+      <a href="rooms.html" data-i18n="nav.rooms">Комнаты</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Тарифы</a>
+      <a href="index.html#studio" data-i18n="nav.studio">Студия</a>
+      <a href="about.html" data-i18n="nav.contacts">Контакты</a>
+    </nav>
+    <a class="btn btn--primary btn--block" href="rooms.html" data-i18n="nav.book">Забронировать</a>
+    <a class="mono" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a>
+  </div>
+</div>
+
+<main id="main">
+  <section class="section section--tight">
+    <div class="container">
+      <h1 data-i18n="credits.title">Авторы фотографий</h1>
+      <p class="lead muted" style="margin-top:1rem" data-i18n="credits.intro">Своих снимков у базы пока нет, поэтому на сайте стоят свободные фотографии настоящих репетиционных и студий с Wikimedia Commons. Каждая используется по лицензии, указанной рядом с ней.</p>
+      <p class="muted mono" style="margin-top:0.5rem;font-size:0.8125rem" data-i18n="credits.edits">Изменения во всех кадрах: кадрирование, уменьшение размера, перевод в монохром с тёплой тонировкой и виньетка — чтобы снимки из разных мест читались как одна база.</p>
+
+      <ul class="credits-list" data-credits style="margin-top:2rem"></ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <span class="logo">
+          <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+          <span data-i18n="brand.name">ГУЛ</span>
+        </span>
+        <p class="muted" style="margin-top:0.75rem" data-i18n="brand.tagline">Репбаза и студия · Вроцлав</p>
+      </div>
+      <div>
+        <h3 data-i18n="footer.nav">Разделы</h3>
+        <ul>
+          <li><a href="rooms.html" data-i18n="nav.rooms">Комнаты</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Тарифы</a></li>
+          <li><a href="index.html#studio" data-i18n="nav.studio">Студия</a></li>
+          <li><a href="about.html" data-i18n="nav.contacts">Контакты</a></li>
+          <li><a href="about.html#rules" data-i18n="common.rulesLink">Правила базы</a></li>
+          <li><a href="credits.html" data-i18n="common.photoCredits">Авторы фото</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.contacts">Контакты</h3>
+        <ul>
+          <li><a class="mono" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a></li>
+          <li><a class="mono" href="mailto:hello@gul.example" data-contact="email">hello@gul.example</a></li>
+          <li><a class="mono" href="https://instagram.com/" rel="noopener noreferrer" target="_blank" data-contact="instagram">@gul.wroclaw</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.hours">Часы работы</h3>
+        <p class="mono" data-contact="hours">10:00 — 06:00</p>
+        <p class="mono muted" data-contact="address">ул. Фабрична 12, Вроцлав</p>
+      </div>
+    </div>
+
+    <p class="demo-notice" style="margin-top:2rem" data-i18n="common.demoNotice">Демонстрационная работа. Занятость, адрес и телефон — заглушки, заявки никуда не отправляются. Фотографии — свободные снимки других студий с Wikimedia Commons.</p>
+
+    <div class="site-footer__bottom">
+      <span>© <span data-year>2026</span> <span data-i18n="brand.name">ГУЛ</span></span>
+      <span data-i18n="footer.rights">Все права защищены</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data/rooms.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/credits.js"></script>
+</body>
+</html>

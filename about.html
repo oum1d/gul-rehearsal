@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="pages.aboutTitle">О базе и контакты — ГУЛ, Вроцлав</title>
+<meta name="description" data-i18n-attr="content:pages.aboutDesc" content="Как появилась репбаза ГУЛ, правила базы, адрес и телефон. Вход со двора, чёрная дверь без вывески. Работаем с 10:00 до 06:00.">
+
+<link rel="canonical" href="https://oum1d.github.io/gul-rehearsal/about.html">
+<link rel="alternate" hreflang="ru" href="https://oum1d.github.io/gul-rehearsal/about.html?lang=ru">
+<link rel="alternate" hreflang="pl" href="https://oum1d.github.io/gul-rehearsal/about.html?lang=pl">
+<link rel="alternate" hreflang="en" href="https://oum1d.github.io/gul-rehearsal/about.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://oum1d.github.io/gul-rehearsal/about.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="О базе и контакты — ГУЛ">
+<meta property="og:description" content="Три музыканта, подвал старого завода и четыре комнаты. Правила, адрес, телефон.">
+<meta property="og:url" content="https://oum1d.github.io/gul-rehearsal/about.html">
+<meta name="theme-color" content="#0E0E0E">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main" data-i18n="common.skipToContent">Перейти к содержимому</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="index.html">
+      <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+      <span>
+        <span data-i18n="brand.name">ГУЛ</span>
+        <span class="logo__sub" data-i18n="brand.tagline">Репбаза и студия · Вроцлав</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" data-i18n-attr="aria-label:nav.main" aria-label="Основная навигация">
+      <ul>
+        <li><a href="rooms.html" data-i18n="nav.rooms">Комнаты</a></li>
+        <li><a href="pricing.html" data-i18n="nav.pricing">Тарифы</a></li>
+        <li><a href="index.html#studio" data-i18n="nav.studio">Студия</a></li>
+        <li><a href="about.html" data-i18n="nav.contacts">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <a class="header-phone" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a>
+      <div class="lang" role="group" aria-label="Язык" data-i18n-attr="aria-label:nav.lang">
+        <button class="lang__btn" type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button class="lang__btn" type="button" data-lang="pl" aria-pressed="false">PL</button>
+        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--primary btn--sm header-cta" href="rooms.html" data-i18n="nav.book">Забронировать</a>
+      <button class="icon-btn burger" id="burger" type="button" aria-expanded="false"
+              aria-controls="mobile-nav" aria-label="Меню" data-i18n-attr="aria-label:nav.menu">≡</button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav__backdrop" data-close-menu></div>
+  <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Меню" data-i18n-attr="aria-label:nav.menu">
+    <div class="mobile-nav__top">
+      <span class="logo">
+        <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+        <span data-i18n="brand.name">ГУЛ</span>
+      </span>
+      <button class="icon-btn" type="button" data-close-menu aria-label="Закрыть" data-i18n-attr="aria-label:nav.close">×</button>
+    </div>
+    <nav class="mobile-nav__list" data-i18n-attr="aria-label:nav.main">
+      <a href="rooms.html" data-i18n="nav.rooms">Комнаты</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Тарифы</a>
+      <a href="index.html#studio" data-i18n="nav.studio">Студия</a>
+      <a href="about.html" data-i18n="nav.contacts">Контакты</a>
+    </nav>
+    <a class="btn btn--primary btn--block" href="rooms.html" data-i18n="nav.book">Забронировать</a>
+    <a class="mono" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ИСТОРИЯ ------------------------------------------------------------ -->
+  <section class="section section--tight">
+    <div class="container">
+      <h1 data-i18n="about.title">О базе</h1>
+
+      <div class="about-grid" style="margin-top:2rem">
+        <div>
+          <p class="lead" data-i18n="about.p1">Мы трое играли в разных группах Вроцлава и лет десять искали, где репетировать без «сделайте потише». В 2021-м нашли подвал старого цеха на Фабричной: бетон, сырость и ни одного соседа в радиусе трёхсот метров.</p>
+          <p data-i18n="about.p2">Год обшивали своими руками — минвата, гипс, ковролин с распродажи. Комбики и барабаны собирали по объявлениям, что-то везли из Германии на прицепе. Первая группа пришла репетировать раньше, чем мы доделали дверь.</p>
+          <p data-i18n="about.p3">Сейчас комнат четыре, а мы всё ещё сами настраиваем барабаны и сами открываем в три ночи. Сайт появился по одной причине: переписка в директе перестала помещаться в голову, и мы начали терять ваши заявки.</p>
+        </div>
+
+        <div>
+          <h2 style="margin-bottom:1.25rem" data-i18n="about.foundersTitle">Кто здесь</h2>
+          <div class="founders">
+            <div class="founder" data-reveal>
+              <div class="poster poster--square" role="img" aria-label="Портрет">
+                <span class="poster__letter" aria-hidden="true">M</span>
+                <span class="poster__note" data-i18n="about.photoPlaceholder">Портрет</span>
+              </div>
+              <span class="founder__name" data-i18n="about.f1">Марек</span>
+              <span class="founder__role" data-i18n="about.f1role">бас, ремонт всего</span>
+            </div>
+            <div class="founder" data-reveal data-reveal-delay="70">
+              <div class="poster poster--square" role="img" aria-label="Портрет">
+                <span class="poster__letter" aria-hidden="true">W</span>
+                <span class="poster__note" data-i18n="about.photoPlaceholder">Портрет</span>
+              </div>
+              <span class="founder__name" data-i18n="about.f2">Владек</span>
+              <span class="founder__role" data-i18n="about.f2role">барабаны, расписание</span>
+            </div>
+            <div class="founder" data-reveal data-reveal-delay="140">
+              <div class="poster poster--square" role="img" aria-label="Портрет">
+                <span class="poster__letter" aria-hidden="true">A</span>
+                <span class="poster__note" data-i18n="about.photoPlaceholder">Портрет</span>
+              </div>
+              <span class="founder__name" data-i18n="about.f3">Ася</span>
+              <span class="founder__role" data-i18n="about.f3role">звук, студия</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРАВИЛА ------------------------------------------------------------ -->
+  <section class="section section--alt" id="rules">
+    <div class="container">
+      <h2 style="margin-bottom:1.5rem" data-i18n="about.rulesTitle">Правила базы</h2>
+      <ol class="rules-list" data-list="about.rules"></ol>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ ----------------------------------------------------------- -->
+  <section class="section" id="contacts">
+    <div class="container">
+      <div class="grid-2">
+
+        <div>
+          <h2 style="margin-bottom:1.5rem" data-i18n="about.contactsTitle">Контакты</h2>
+
+          <div class="contact-list">
+            <div class="contact-row">
+              <span class="contact-row__label" data-i18n="about.phoneLabel">Телефон</span>
+              <a class="contact-row__value" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a>
+            </div>
+            <div class="contact-row">
+              <span class="contact-row__label" data-i18n="about.emailLabel">Почта</span>
+              <a class="contact-row__value" href="mailto:hello@gul.example" data-contact="email">hello@gul.example</a>
+            </div>
+            <div class="contact-row">
+              <span class="contact-row__label">Instagram</span>
+              <a class="contact-row__value" href="https://instagram.com/" rel="noopener noreferrer" target="_blank" data-contact="instagram">@gul.wroclaw</a>
+            </div>
+            <div class="contact-row">
+              <span class="contact-row__label" data-i18n="about.addressLabel">Адрес</span>
+              <span class="contact-row__value" data-contact="address">ул. Фабрична 12, Вроцлав</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-row__label" data-i18n="about.hoursLabel">Часы работы</span>
+              <span class="contact-row__value" data-contact="hours">10:00 — 06:00</span>
+            </div>
+          </div>
+
+          <div class="map-placeholder" style="margin-top:1.5rem">
+            <span class="map-pin" aria-hidden="true">◉</span>
+            <span data-i18n="map.placeholder">Здесь будет карта</span>
+            <span data-i18n="map.note">Вход со двора. Чёрная дверь без вывески, слева от ворот.</span>
+          </div>
+        </div>
+
+        <!-- ФОРМА ВОПРОСА -------------------------------------------------- -->
+        <div>
+          <h2 style="margin-bottom:0.75rem" data-i18n="about.formTitle">Задать вопрос</h2>
+          <p class="muted" style="margin-bottom:1.25rem" data-i18n="about.formSub">Если вопрос не про бронь конкретного слота — напишите здесь.</p>
+
+          <form class="card" id="ask-form" novalidate style="display:flex;flex-direction:column;gap:1rem">
+
+            <div class="field" data-field="ask-name">
+              <label class="field__label" for="ask-name" data-i18n="booking.name">Как вас зовут</label>
+              <input class="field__control" type="text" id="ask-name" name="name" maxlength="60"
+                     autocomplete="name" data-i18n-attr="placeholder:booking.namePlaceholder">
+              <p class="field__error" id="ask-name-err" data-i18n="booking.errName">Напишите имя</p>
+            </div>
+
+            <div class="field" data-field="ask-contact">
+              <label class="field__label" for="ask-contact" data-i18n="booking.phone">Телефон</label>
+              <input class="field__control" type="tel" id="ask-contact" name="phone" maxlength="24"
+                     inputmode="tel" autocomplete="tel" data-i18n-attr="placeholder:booking.phonePlaceholder">
+              <p class="field__error" id="ask-contact-err" data-i18n="booking.errPhone">Введите телефон</p>
+            </div>
+
+            <div class="field" data-field="ask-message">
+              <label class="field__label" for="ask-message" data-i18n="about.formMessage">Вопрос</label>
+              <textarea class="field__control" id="ask-message" name="message" rows="4" maxlength="600"
+                        data-i18n-attr="placeholder:about.formMessagePlaceholder"></textarea>
+              <p class="field__error" id="ask-message-err" data-i18n="about.formErrMessage">Напишите вопрос</p>
+            </div>
+
+            <div class="field" data-field="ask-consent">
+              <label class="checkbox">
+                <input type="checkbox" name="consent">
+                <span data-i18n="booking.consent">Согласен на обработку данных</span>
+              </label>
+              <p class="field__error" id="ask-consent-err" data-i18n="booking.errConsent">Без согласия мы не можем сохранить заявку</p>
+            </div>
+
+            <button class="btn btn--primary btn--block" type="submit" data-i18n="about.formSubmit">Отправить</button>
+            <p class="muted" style="font-size:0.8125rem" data-i18n="booking.note">Мы перезвоним в течение часа. Ночью — утром.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <span class="logo">
+          <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+          <span data-i18n="brand.name">ГУЛ</span>
+        </span>
+        <p class="muted" style="margin-top:0.75rem" data-i18n="brand.tagline">Репбаза и студия · Вроцлав</p>
+      </div>
+      <div>
+        <h3 data-i18n="footer.nav">Разделы</h3>
+        <ul>
+          <li><a href="rooms.html" data-i18n="nav.rooms">Комнаты</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Тарифы</a></li>
+          <li><a href="index.html#studio" data-i18n="nav.studio">Студия</a></li>
+          <li><a href="about.html" data-i18n="nav.contacts">Контакты</a></li>
+          <li><a href="about.html#rules" data-i18n="common.rulesLink">Правила базы</a></li>
+          <li><a href="credits.html" data-i18n="common.photoCredits">Авторы фото</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.contacts">Контакты</h3>
+        <ul>
+          <li><a class="mono" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a></li>
+          <li><a class="mono" href="mailto:hello@gul.example" data-contact="email">hello@gul.example</a></li>
+          <li><a class="mono" href="https://instagram.com/" rel="noopener noreferrer" target="_blank" data-contact="instagram">@gul.wroclaw</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer.hours">Часы работы</h3>
+        <p class="mono" data-contact="hours">10:00 — 06:00</p>
+        <p class="mono muted" data-contact="address">ул. Фабрична 12, Вроцлав</p>
+      </div>
+    </div>
+
+    <p class="demo-notice" style="margin-top:2rem" data-i18n="common.demoNotice">Демонстрационная работа. Занятость, адрес и телефон — заглушки, заявки никуда не отправляются. Фотографии — свободные снимки других студий с Wikimedia Commons.</p>
+
+    <div class="site-footer__bottom">
+      <span>© <span data-year>2026</span> <span data-i18n="brand.name">ГУЛ</span></span>
+      <span data-i18n="footer.rights">Все права защищены</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data/rooms.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/contact.js"></script>
+</body>
+</html>

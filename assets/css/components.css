@@ -1,0 +1,821 @@
+/* ============================================================================
+   ГУЛ — компоненты
+   ============================================================================ */
+
+/* ============================================================================
+   КНОПКИ
+   ============================================================================ */
+.btn {
+  --btn-bg: transparent;
+  --btn-fg: var(--text);
+  --btn-bd: var(--line-strong);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55em;
+  min-height: var(--tap);
+  padding: 0.7rem 1.35rem;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  border: var(--bw) solid var(--btn-bd);
+  border-radius: var(--r);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  text-align: center;
+  cursor: pointer;
+  transition: background var(--fast) var(--ease), color var(--fast) var(--ease),
+              border-color var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+.btn:hover { text-decoration: none; }
+.btn:active { transform: translateY(1px); }
+
+.btn--primary {
+  --btn-bg: var(--acid);
+  --btn-fg: var(--black);
+  --btn-bd: var(--acid);
+}
+.btn--primary:hover { --btn-bg: var(--text); --btn-bd: var(--text); }
+
+.btn--ghost:hover { --btn-bd: var(--acid); --btn-fg: var(--acid); }
+
+.btn--quiet {
+  --btn-bd: transparent;
+  --btn-fg: var(--muted);
+  min-height: auto;
+  padding: 0.35rem 0.5rem;
+}
+.btn--quiet:hover { --btn-fg: var(--text); }
+
+.btn--block { width: 100%; }
+.btn--sm { min-height: 40px; padding: 0.4rem 0.9rem; font-size: 0.875rem; }
+
+.btn[disabled], .btn[aria-disabled='true'] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ============================================================================
+   ТЕГИ, ЧИПСЫ, БЕЙДЖИ
+   ============================================================================ */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--r);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.badge--free { background: var(--acid); color: var(--black); }
+.badge--busy { background: transparent; color: var(--red); border: 1px solid var(--red); }
+/* Состояние никогда не передаётся одним цветом: у «занято» есть ещё и точка-метка */
+.badge--busy::before { content: '×'; font-weight: 700; }
+.badge--free::before { content: '●'; font-size: 0.6em; }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  min-height: 36px;
+  padding: 0.3rem 0.5rem 0.3rem 0.75rem;
+  background: var(--card);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r);
+  font-size: 0.8125rem;
+  color: var(--text);
+  cursor: pointer;
+}
+.chip__x {
+  display: grid;
+  place-items: center;
+  width: 22px; height: 22px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.chip__x:hover { color: var(--red); }
+
+/* ============================================================================
+   КАРТОЧКИ
+   ============================================================================ */
+.card {
+  background: var(--card-2);
+  border: var(--bw) solid var(--line);
+  border-radius: var(--r);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.card--hover { transition: border-color var(--fast) var(--ease); }
+.card--hover:hover { border-color: var(--line-strong); }
+
+/* --- карточка комнаты --- */
+.room-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-2);
+  border: var(--bw) solid var(--line);
+  border-radius: var(--r);
+  overflow: hidden;
+  transition: border-color var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+.room-card:hover { border-color: var(--acid); }
+.room-card__body { padding: clamp(0.9rem, 2.5vw, 1.35rem); display: flex; flex-direction: column; gap: 0.85rem; flex: 1; }
+.room-card__top { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; }
+.room-card__title { font-size: clamp(1.25rem, 3.5vw, 1.75rem); }
+.room-card__letter {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--black);
+  background: var(--acid);
+  padding: 0.05em 0.5em;
+  border-radius: var(--r);
+}
+.room-card__meta { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.room-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+}
+.room-card__price { font-size: clamp(1.25rem, 3vw, 1.5rem); font-weight: 700; }
+.room-card__price small { font-size: 0.6em; color: var(--muted); font-weight: 400; }
+
+/* --- заглушка фотографии ------------------------------------------------
+   Не сток и не серый прямоугольник: типографическая афиша, по которой сразу
+   видно, что здесь будет реальный кадр. Заменяется в rooms.js полем photo. */
+.poster {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  background-color: var(--card);
+  background-image: repeating-linear-gradient(-45deg, transparent 0 8px, rgba(242,240,234,0.045) 8px 11px);
+  border-bottom: var(--bw) solid var(--line);
+  overflow: hidden;
+}
+.poster__letter {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 18vw, 8rem);
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--line-strong);
+  text-stroke: 2px var(--line-strong);
+  user-select: none;
+}
+.poster__note {
+  position: absolute;
+  left: 0; bottom: 0;
+  padding: 0.3rem 0.6rem;
+  background: var(--black);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.poster--wide { aspect-ratio: 16 / 9; }
+.poster--square { aspect-ratio: 1; }
+.poster img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Тонировка серии запечена в сами файлы (tools/prepare-photos.ps1), здесь
+   только отклик на наведение: карточка чуть «зажигается», как лампа в
+   комнате. Цвет не возвращается — иначе стены разных зданий снова разъедутся.
+   Штриховка фона остаётся видна, пока кадр грузится, — как скелетон. */
+.poster--photo img {
+  filter: brightness(0.94);
+  transition: filter var(--base) var(--ease);
+}
+.room-card:hover .poster--photo img { filter: brightness(1.08); }
+
+/* Подпись автора под кадром — требование лицензий CC BY */
+.gallery__figure { margin: 0; }
+.gallery__credit {
+  margin-top: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.gallery__credit a { color: var(--muted); text-decoration: underline; text-decoration-thickness: 1px; }
+.gallery__credit a:hover { color: var(--acid); }
+
+/* ============================================================================
+   ФОРМЫ
+   ============================================================================ */
+.field { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.field__label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.field__label .req { color: var(--acid); }
+
+.field__control {
+  width: 100%;
+  min-height: var(--tap);
+  padding: 0.7rem 0.9rem;
+  background: var(--bg);
+  color: var(--text);
+  border: var(--bw) solid var(--line-strong);
+  border-radius: var(--r);
+  transition: border-color var(--fast) var(--ease);
+}
+.field__control::placeholder { color: #7C776F; }
+.field__control:hover { border-color: var(--muted); }
+.field__control:focus-visible { border-color: var(--acid); outline-offset: 0; }
+textarea.field__control { min-height: 96px; resize: vertical; line-height: 1.5; }
+
+/* Ошибка живёт под полем и объявляется скринридеру — никаких alert() */
+.field__error {
+  display: none;
+  align-items: flex-start;
+  gap: 0.4em;
+  color: var(--red);
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+.field__error::before { content: '!'; font-weight: 700; font-family: var(--font-mono); }
+.field.is-invalid .field__error { display: flex; }
+.field.is-invalid .field__control { border-color: var(--red); }
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  min-height: var(--tap);
+  padding: 0.35rem 0;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+.checkbox input {
+  flex: none;
+  width: 22px; height: 22px;
+  margin: 0.1rem 0 0;
+  accent-color: var(--acid);
+  cursor: pointer;
+}
+
+.select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+                    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 2.25rem;
+  cursor: pointer;
+}
+
+/* Ползунок «часов в месяц» */
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 44px;
+  background: transparent;
+  cursor: pointer;
+}
+.range::-webkit-slider-runnable-track { height: 6px; background: var(--card); border: 1px solid var(--line-strong); }
+.range::-moz-range-track { height: 6px; background: var(--card); border: 1px solid var(--line-strong); }
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 26px; height: 26px;
+  margin-top: -11px;
+  background: var(--acid);
+  border: var(--bw) solid var(--black);
+  border-radius: var(--r);
+}
+.range::-moz-range-thumb {
+  width: 26px; height: 26px;
+  background: var(--acid);
+  border: var(--bw) solid var(--black);
+  border-radius: var(--r);
+}
+
+/* ============================================================================
+   СЕТКА РАСПИСАНИЯ
+   ----------------------------------------------------------------------------
+   Состояния различимы БЕЗ цвета — это отдельный критерий приёмки:
+       свободно  — обычная рамка, видна цена
+       занято    — диагональная штриховка + зачёркнутое время + атрибут disabled
+       выбрано   — заливка, толстая рамка и уголковая метка ✓
+       закрыто   — приглушённая заливка и прочерк вместо цены
+   ============================================================================ */
+.schedule { display: flex; flex-direction: column; gap: 0.75rem; }
+
+/* Появляется, если выбранные часы заняли, пока страница была открыта.
+   Красный — только рамка и знак, текст светлый: так он читается на тёмном. */
+.slots-taken {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border: var(--bw) solid var(--red);
+  border-radius: var(--r);
+  color: var(--text);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+.slots-taken::before { content: '×'; color: var(--red); font-family: var(--font-mono); font-weight: 700; }
+
+.schedule__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  padding: 0.75rem 0;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.schedule__legend li { display: flex; align-items: center; gap: 0.5rem; }
+.legend-swatch {
+  width: 20px; height: 20px;
+  border: var(--bw) solid var(--line-strong);
+  border-radius: var(--r);
+  flex: none;
+}
+.legend-swatch--busy {
+  border-color: var(--red);
+  background-image: repeating-linear-gradient(-45deg, transparent 0 3px, var(--red) 3px 4px);
+}
+.legend-swatch--picked { background: var(--acid); border-color: var(--acid); }
+.legend-swatch--closed { background: var(--card); border-color: var(--line); opacity: 0.6; }
+
+/* --- недельная сетка (планшет и десктоп) --- */
+.week {
+  display: grid;
+  grid-template-columns: 58px repeat(7, minmax(0, 1fr));
+  gap: 3px;
+  border: var(--bw) solid var(--line);
+  border-radius: var(--r);
+  padding: 3px;
+  background: var(--bg-2);
+}
+.week__corner { }
+.week__day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.45rem 0.2rem;
+  background: var(--card-2);
+  border-radius: var(--r);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.week__day b { color: var(--text); font-size: 0.875rem; }
+.week__day--today { background: var(--card); color: var(--acid); }
+.week__day--today b { color: var(--acid); }
+.week__hour {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* --- один слот --- */
+.slot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0.2rem;
+  background: var(--card-2);
+  border: var(--bw) solid var(--line);
+  border-radius: var(--r);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: background var(--fast) var(--ease), border-color var(--fast) var(--ease);
+}
+.slot:hover:not(:disabled) { border-color: var(--acid); background: var(--card); }
+
+.slot--busy,
+.slot:disabled {
+  cursor: not-allowed;
+  color: var(--muted);
+}
+.slot--busy {
+  border-color: var(--red);
+  color: var(--red);
+  text-decoration: line-through;      /* различимость без цвета — раз */
+  background-color: var(--card-2);
+  background-image: repeating-linear-gradient(-45deg, transparent 0 4px, rgba(255,59,47,0.32) 4px 6px); /* два */
+}
+
+.slot--closed {
+  background: var(--card);
+  border-color: var(--line);
+  color: #6E6A63;
+  opacity: 0.55;
+}
+
+.slot--picked {
+  background: var(--acid);
+  border-color: var(--acid);
+  color: var(--black);
+  font-weight: 700;
+}
+/* Галочка в углу: выбранное отличимо от свободного даже в монохроме */
+.slot--picked::after {
+  content: '✓';
+  position: absolute;
+  top: 1px; right: 3px;
+  font-size: 0.625rem;
+  line-height: 1;
+}
+
+.slot--past { opacity: 0.4; }
+
+/* --- мобильный вид: выбор дня + часы одного дня --- */
+.daypicker {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.daypicker::-webkit-scrollbar { height: 3px; }
+.daypicker::-webkit-scrollbar-thumb { background: var(--line-strong); }
+
+.daybtn {
+  flex: none;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  min-width: 60px;
+  min-height: var(--tap);
+  padding: 0.45rem 0.5rem;
+  background: var(--card-2);
+  border: var(--bw) solid var(--line);
+  border-radius: var(--r);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+}
+.daybtn b { font-size: 0.9375rem; color: var(--text); }
+.daybtn[aria-pressed='true'] { background: var(--acid); border-color: var(--acid); color: var(--black); }
+.daybtn[aria-pressed='true'] b { color: var(--black); }
+.daybtn--full { opacity: 0.55; }
+
+.dayslots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  gap: 6px;
+}
+.dayslots .slot { flex-direction: column; gap: 1px; min-height: 54px; }
+.dayslots .slot b { font-size: 0.8125rem; font-weight: 500; }
+.dayslots .slot span { font-size: 0.625rem; opacity: 0.75; }
+
+/* ============================================================================
+   ПАНЕЛЬ БРОНИ
+   ============================================================================ */
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.9rem 1rem;
+  background: var(--card);
+  border: var(--bw) solid var(--line-strong);
+  border-radius: var(--r);
+}
+.summary__row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.summary__label { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.summary__value { font-family: var(--font-mono); font-size: 0.9375rem; text-align: right; }
+.summary__total { font-family: var(--font-mono); font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 700; color: var(--acid); line-height: 1; }
+
+/* Прилипающая панель на мобильном: живёт над нижним краем экрана */
+.dock {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem var(--pad-x);
+  padding-bottom: calc(0.7rem + env(safe-area-inset-bottom, 0px));
+  background: var(--bg-2);
+  border-top: var(--bw) solid var(--acid);
+  transform: translateY(110%);
+  transition: transform var(--base) var(--ease);
+}
+.dock.is-open { transform: none; }
+.dock__info { flex: 1; min-width: 0; }
+.dock__line { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); }
+.dock__total { font-family: var(--font-mono); font-size: 1.25rem; font-weight: 700; color: var(--acid); }
+@media (min-width: 960px) { .dock { display: none; } }
+
+/* ============================================================================
+   ШТОРКА (бронь, меню)
+   ============================================================================ */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+}
+.drawer.is-open { display: block; }
+
+.drawer__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 5, 0.78);
+}
+
+.drawer__panel {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: min(440px, 100%);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-2);
+  border-left: var(--bw) solid var(--acid);
+  animation: drawer-in var(--base) var(--ease);
+  overflow: hidden;
+}
+@keyframes drawer-in { from { transform: translateX(100%); } to { transform: none; } }
+
+.drawer__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem var(--pad-x);
+  border-bottom: var(--bw) solid var(--line);
+}
+.drawer__body { flex: 1; overflow-y: auto; padding: 1.25rem var(--pad-x); display: flex; flex-direction: column; gap: 1rem; }
+.drawer__foot { padding: 1rem var(--pad-x); padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); border-top: var(--bw) solid var(--line); background: var(--bg-2); }
+
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: var(--tap); height: var(--tap);
+  background: transparent;
+  border: var(--bw) solid var(--line-strong);
+  border-radius: var(--r);
+  color: var(--text);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.icon-btn:hover { border-color: var(--acid); color: var(--acid); }
+
+/* На телефоне шторка занимает весь экран — иначе панель брони не помещается */
+@media (max-width: 600px) {
+  .drawer__panel {
+    width: 100%;
+    border-left: 0;
+    border-top: var(--bw) solid var(--acid);
+    animation-name: sheet-in;
+  }
+  @keyframes sheet-in { from { transform: translateY(100%); } to { transform: none; } }
+}
+
+body.is-locked { overflow: hidden; }
+
+/* ============================================================================
+   АККОРДЕОН
+   ============================================================================ */
+.accordion { border-top: var(--bw) solid var(--line); }
+.accordion__item { border-bottom: var(--bw) solid var(--line); }
+.accordion__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  min-height: var(--tap);
+  padding: 1.15rem 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.6vw, 1.25rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  cursor: pointer;
+}
+.accordion__btn:hover { color: var(--acid); }
+.accordion__sign {
+  flex: none;
+  width: 28px; height: 28px;
+  display: grid; place-items: center;
+  border: var(--bw) solid var(--line-strong);
+  border-radius: var(--r);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  transition: transform var(--fast) var(--ease), border-color var(--fast) var(--ease);
+}
+.accordion__btn[aria-expanded='true'] .accordion__sign { transform: rotate(45deg); border-color: var(--acid); color: var(--acid); }
+.accordion__panel { padding: 0 0 1.25rem; max-width: 62ch; color: var(--muted); }
+.accordion__panel[hidden] { display: none; }
+
+/* ============================================================================
+   ОТЗЫВЫ
+   ============================================================================ */
+.reviews {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min(88%, 380px), 1fr);
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.75rem;
+  -webkit-overflow-scrolling: touch;
+}
+.reviews::-webkit-scrollbar { height: 4px; }
+.reviews::-webkit-scrollbar-thumb { background: var(--line-strong); }
+.review {
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.1rem, 3vw, 1.75rem);
+  background: var(--card-2);
+  border: var(--bw) solid var(--line);
+  border-radius: var(--r);
+}
+.review__text { font-size: clamp(1rem, 2.4vw, 1.125rem); line-height: 1.5; }
+.review__text::before { content: '«'; color: var(--acid); }
+.review__text::after { content: '»'; color: var(--acid); }
+.review__author { margin-top: auto; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--muted); }
+.review__author b { color: var(--text); }
+
+@media (min-width: 900px) {
+  .reviews { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); overflow: visible; }
+}
+
+/* ============================================================================
+   СОСТОЯНИЯ ЗАГРУЗКИ И ОШИБКИ
+   ============================================================================ */
+.skeleton {
+  background: linear-gradient(90deg, var(--card-2) 25%, var(--card) 50%, var(--card-2) 75%);
+  background-size: 300% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border: var(--bw) solid var(--line);
+  border-radius: var(--r);
+}
+@keyframes shimmer { from { background-position: 150% 0; } to { background-position: -150% 0; } }
+.skeleton--card { height: 320px; }
+.skeleton--row { height: 44px; }
+.skeleton--tile { height: 92px; }
+
+.loading-note {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.loading-note::before {
+  content: '';
+  width: 12px; height: 12px;
+  border: 2px solid var(--line-strong);
+  border-top-color: var(--acid);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.alert {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  background: var(--card-2);
+  border: var(--bw) solid var(--red);
+  border-radius: var(--r);
+}
+.alert__title { font-family: var(--font-display); text-transform: uppercase; font-size: 1.125rem; color: var(--red); }
+.alert__text { color: var(--muted); max-width: 52ch; }
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border: var(--bw) dashed var(--line-strong);
+  border-radius: var(--r);
+}
+
+/* ============================================================================
+   ПЛИТКА БЛИЖАЙШЕГО СЛОТА
+   ============================================================================ */
+.slot-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem;
+  background: var(--card-2);
+  border: var(--bw) solid var(--line);
+  border-radius: var(--r);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--fast) var(--ease), background var(--fast) var(--ease);
+}
+.slot-tile:hover { border-color: var(--acid); background: var(--card); }
+.slot-tile__room { font-family: var(--font-display); font-size: 1.125rem; text-transform: uppercase; letter-spacing: -0.01em; }
+.slot-tile__time { font-family: var(--font-mono); font-size: 1.0625rem; color: var(--acid); }
+.slot-tile__price { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--muted); }
+
+/* ============================================================================
+   ТАБЛИЦА ТАРИФОВ
+   ============================================================================ */
+.table-wrap { overflow-x: auto; border: var(--bw) solid var(--line); border-radius: var(--r); }
+.table { min-width: 560px; }
+.table th, .table td { padding: 0.85rem 1rem; text-align: left; border-bottom: 1px solid var(--line); }
+.table thead th {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  background: var(--card-2);
+  white-space: nowrap;
+}
+.table tbody tr:last-child td { border-bottom: 0; }
+.table tbody tr:hover { background: var(--card-2); }
+.table td.num, .table td .num { font-family: var(--font-mono); }
+
+/* ============================================================================
+   ЦЕНОВЫЕ КАРТОЧКИ / АБОНЕМЕНТЫ
+   ============================================================================ */
+.pass {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: clamp(1.2rem, 3vw, 1.75rem);
+  background: var(--card-2);
+  border: var(--bw) solid var(--line);
+  border-radius: var(--r);
+}
+.pass--popular { border-color: var(--acid); }
+.pass__flag {
+  position: absolute;
+  top: calc(var(--bw) * -1);
+  right: calc(var(--bw) * -1);
+  padding: 0.25rem 0.7rem;
+  background: var(--acid);
+  color: var(--black);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.pass__price { font-family: var(--font-mono); font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 700; line-height: 1; }
+.pass__price small { font-size: 0.35em; color: var(--muted); font-weight: 400; }
+.pass__save { color: var(--acid); font-family: var(--font-mono); font-size: 0.875rem; }
+.pass ul { display: flex; flex-direction: column; gap: 0.4rem; color: var(--muted); font-size: 0.9375rem; }
+.pass ul li { padding-left: 1.1rem; position: relative; }
+.pass ul li::before { content: '—'; position: absolute; left: 0; color: var(--line-strong); }
+.pass .btn { margin-top: auto; }

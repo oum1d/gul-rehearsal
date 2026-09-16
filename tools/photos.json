@@ -1,0 +1,36 @@
+{
+  "_about": "Манифест фотографий сайта. fetch-photos.ps1 скачивает кадры с Wikimedia Commons в photos-raw и собирает авторов в photos-raw/credits.json. prepare-photos.ps1 кадрирует, тонирует всю серию одинаково, раскладывает в assets/img/rooms и сам переписывает авторов в rooms.js и CREDITS.md. fx/fy — точка кадрирования: 0 левый/верхний край, 0.5 центр, 1 правый/нижний. where — где кадр стоит на сайте, для CREDITS.md.",
+
+  "_grade": "Общая обработка — чтобы снимки из разных мест читались как одно здание. Цвет убирается полностью и заменяется тонировкой от shadow к highlight: разница между деревянными, каменными и бетонными стенами уходит, остаётся одна серия в духе ризографа из брифа. Контраст и яркость — вокруг середины тона. vignette — затемнение краёв, 0 выключено. exposure у отдельного кадра — поправка яркости только для него: подвальный a-1 снят темнее остальных. Зерно в файлы не запекается: оно уже лежит поверх всей страницы в CSS, а в JPEG шум раздувает вес вдвое.",
+  "grade": {
+    "shadow": "#0F0E0C",
+    "highlight": "#EFE9DC",
+    "contrast": 1.22,
+    "brightness": -0.03,
+    "vignette": 0.42
+  },
+
+  "photos": [
+    { "name": "a-1",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.5,  "exposure": 0.04, "where": "Комната A, обложка", "title": "File:Music practice room 2, Air raid shelter, Stuttgart, 2013 (photo by Gerold Schneider).jpg" },
+    { "name": "a-2",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.42, "where": "Комната A, галерея", "title": "File:Guitar amp equipment setup in a music studio with amplifiers and microphones.jpg" },
+    { "name": "a-3",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.5,  "where": "Комната A, галерея", "title": "File:Details of a guitar amplifier showcasing knobs and settings in a cozy music studio environment.jpg" },
+    { "name": "a-4",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.5,  "where": "Комната A, галерея", "title": "File:Several pieces of guitar equipment.jpg" },
+
+    { "name": "b-1",    "ratio": "4:3",  "fx": 0.3,  "fy": 0.5,  "where": "Комната B, обложка", "title": "File:Music practice room 1, Air raid shelter, Stuttgart, 2013 (photo by Gerold Schneider).jpg" },
+    { "name": "b-2",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.5,  "where": "Комната B, галерея", "title": "File:Drums in the studio from above.jpg" },
+    { "name": "b-3",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.5,  "where": "Комната B, галерея", "title": "File:Drum set takes center stage in a well-lit studio filled with musical energy.jpg" },
+    { "name": "b-4",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.5,  "where": "Комната B, галерея", "title": "File:Drum set ready for practice in a music studio with microphone and cymbals.jpg" },
+
+    { "name": "c-1",    "ratio": "4:3",  "fx": 0.55, "fy": 0.5,  "where": "Комната C, обложка", "title": "File:Studio 2 drum room - a favorite of Cozy Powell (53719506547).jpg" },
+    { "name": "c-2",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.5,  "where": "Комната C, галерея", "title": "File:Studio 1 Coach house drum room - used for \"Heaven & Hell\" by Black Sabbath (53720747914).jpg" },
+    { "name": "c-3",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.5,  "where": "Комната C, галерея", "title": "File:Studio 2 48-track desk (53720747939).jpg" },
+    { "name": "c-4",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.45, "where": "Комната C, галерея", "title": "File:Active 2\" tape machine in Studio 2 (53720843350).jpg" },
+
+    { "name": "d-1",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.72, "where": "Комната D, обложка", "title": "File:Rhodes electric piano (53719506642).jpg" },
+    { "name": "d-2",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.5,  "where": "Комната D, галерея", "title": "File:Studio 2 control room (53720619853).jpg" },
+    { "name": "d-3",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.5,  "where": "Комната D, галерея", "title": "File:A second Hammond and Leslie in the C, Rockfieldoach House studio (53720620008).jpg" },
+    { "name": "d-4",    "ratio": "4:3",  "fx": 0.5,  "fy": 0.5,  "where": "Комната D, галерея", "title": "File:Hammond organ and Leslie speaker Studio 2 (53720407971).jpg" },
+
+    { "name": "studio", "ratio": "16:9", "fx": 0.5,  "fy": 0.5,  "where": "Главная, баннер студии записи", "title": "File:Coach House control room (53720408036).jpg" }
+  ]
+}

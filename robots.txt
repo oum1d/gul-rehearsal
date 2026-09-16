@@ -1,0 +1,10 @@
+# ГУЛ — репбаза и студия записи, Вроцлав
+# Демо-публикация на GitHub Pages. Почта и телефон в контактах — заглушки.
+# На поддомене github.io роботы читают robots.txt из корня домена,
+# поэтому этот файл здесь справочный — он поедет вместе с сайтом на свой домен.
+
+User-agent: *
+Allow: /gul-rehearsal/
+Disallow: /gul-rehearsal/booked.html
+
+Sitemap: https://oum1d.github.io/gul-rehearsal/sitemap.xml

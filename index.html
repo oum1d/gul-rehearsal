@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="pages.homeTitle">ГУЛ — репетиционная база и студия записи во Вроцлаве</title>
+<meta name="description" data-i18n-attr="content:pages.homeDesc" content="Четыре репетиционные комнаты в подвале старого завода во Вроцлаве. Барабаны Tama, комбики, пульт. От 30 zł в час, ночью на 25% дешевле. Бронь онлайн без переписки.">
+
+<link rel="canonical" href="https://oum1d.github.io/gul-rehearsal/index.html">
+<link rel="alternate" hreflang="ru" href="https://oum1d.github.io/gul-rehearsal/index.html?lang=ru">
+<link rel="alternate" hreflang="pl" href="https://oum1d.github.io/gul-rehearsal/index.html?lang=pl">
+<link rel="alternate" hreflang="en" href="https://oum1d.github.io/gul-rehearsal/index.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://oum1d.github.io/gul-rehearsal/index.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="ГУЛ — подвал, где громко можно">
+<meta property="og:description" content="Четыре репетиционные комнаты и студия записи во Вроцлаве. Бронь слота онлайн за минуту.">
+<meta property="og:url" content="https://oum1d.github.io/gul-rehearsal/index.html">
+<meta property="og:image" content="https://oum1d.github.io/gul-rehearsal/assets/img/og.png">
+<meta name="theme-color" content="#0E0E0E">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicVenue",
+  "name": "ГУЛ",
+  "description": "Репетиционная база и студия записи демо во Вроцлаве",
+  "url": "https://oum1d.github.io/gul-rehearsal/",
+  "telephone": "+48500000000",
+  "priceRange": "30-111 PLN",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ul. Fabryczna 12",
+    "addressLocality": "Wrocław",
+    "addressCountry": "PL"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "10:00",
+    "closes": "06:00"
+  }]
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main" data-i18n="common.skipToContent">Перейти к содержимому</a>
+
+<!-- ШАПКА ================================================================= -->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="index.html">
+      <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+      <span>
+        <span data-i18n="brand.name">ГУЛ</span>
+        <span class="logo__sub" data-i18n="brand.tagline">Репбаза и студия · Вроцлав</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" data-i18n-attr="aria-label:nav.main" aria-label="Основная навигация">
+      <ul>
+        <li><a href="rooms.html" data-i18n="nav.rooms">Комнаты</a></li>
+        <li><a href="pricing.html" data-i18n="nav.pricing">Тарифы</a></li>
+        <li><a href="index.html#studio" data-i18n="nav.studio">Студия</a></li>
+        <li><a href="about.html" data-i18n="nav.contacts">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <a class="header-phone" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a>
+
+      <div class="lang" role="group" aria-label="Язык" data-i18n-attr="aria-label:nav.lang">
+        <button class="lang__btn" type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button class="lang__btn" type="button" data-lang="pl" aria-pressed="false">PL</button>
+        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+
+      <a class="btn btn--primary btn--sm header-cta" href="rooms.html" data-i18n="nav.book">Забронировать</a>
+
+      <button class="icon-btn burger" id="burger" type="button" aria-expanded="false"
+              aria-controls="mobile-nav" aria-label="Меню" data-i18n-attr="aria-label:nav.menu">≡</button>
+    </div>
+  </div>
+</header>
+
+<!-- МОБИЛЬНОЕ МЕНЮ ======================================================== -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav__backdrop" data-close-menu></div>
+  <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Меню" data-i18n-attr="aria-label:nav.menu">
+    <div class="mobile-nav__top">
+      <span class="logo">
+        <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+        <span data-i18n="brand.name">ГУЛ</span>
+      </span>
+      <button class="icon-btn" type="button" data-close-menu aria-label="Закрыть" data-i18n-attr="aria-label:nav.close">×</button>
+    </div>
+    <nav class="mobile-nav__list" data-i18n-attr="aria-label:nav.main">
+      <a href="rooms.html" data-i18n="nav.rooms">Комнаты</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Тарифы</a>
+      <a href="index.html#studio" data-i18n="nav.studio">Студия</a>
+      <a href="about.html" data-i18n="nav.contacts">Контакты</a>
+    </nav>
+    <a class="btn btn--primary btn--block" href="rooms.html" data-i18n="nav.book">Забронировать</a>
+    <a class="mono" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ПЕРВЫЙ ЭКРАН ======================================================== -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <h1 class="hero__title" data-i18n="hero.h1">Подвал, где громко можно</h1>
+
+      <div>
+        <p class="lead hero__sub" data-i18n="hero.sub">4 комнаты, барабаны Tama, честные 40 zł в час днём. Вход со двора, чёрная дверь без вывески.</p>
+      </div>
+
+      <div>
+        <p class="status" data-status aria-live="polite">
+          <span class="status__dot" aria-hidden="true"></span>
+          <span class="status__label" data-i18n="hero.statusLabel">Сейчас</span>
+        </p>
+
+        <div class="hero__actions" style="margin-top:1.25rem">
+          <a class="btn btn--primary" href="rooms.html" data-i18n="hero.ctaRooms">Смотреть комнаты</a>
+          <a class="btn btn--ghost" href="#nearest" data-jump-nearest data-i18n="hero.ctaNearest">Ближайший свободный слот</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- БЛИЖАЙШИЕ СЛОТЫ ===================================================== -->
+  <section class="section section--tight" id="nearest">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="eyebrow" data-i18n="nearest.sub">Тапните по слоту — панель брони откроется с уже выбранным временем.</p>
+          <h2 class="section__title" data-i18n="nearest.title">Ближайшие свободные слоты</h2>
+        </div>
+        <a class="btn btn--ghost btn--sm" href="rooms.html" data-i18n="roomsBlock.all">Все комнаты и фильтры</a>
+      </div>
+
+      <div class="grid-tiles" data-nearest></div>
+    </div>
+  </section>
+
+  <!-- КОМНАТЫ ============================================================= -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="eyebrow" data-i18n="roomsBlock.sub">Четыре комнаты под разный состав и разный бюджет.</p>
+          <h2 class="section__title" data-i18n="roomsBlock.title">Выбери, где шуметь</h2>
+        </div>
+      </div>
+
+      <div class="grid-rooms" data-rooms></div>
+    </div>
+  </section>
+
+  <!-- ОБОРУДОВАНИЕ ======================================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2 class="section__title" data-i18n="gear.title">Что уже стоит в комнатах</h2>
+          <p class="lead muted" style="margin-top:1rem" data-i18n="gear.sub">Своё привозить не обязательно. Всё настроено и работает — это проверяется перед каждой сменой.</p>
+        </div>
+      </div>
+
+      <div class="grid-gear">
+        <div class="gear-item" data-reveal>
+          <h3 data-i18n="gear.drums">Барабаны Tama</h3>
+          <p data-i18n="gear.drumsNote">Пластики меняем раз в два месяца</p>
+        </div>
+        <div class="gear-item" data-reveal data-reveal-delay="60">
+          <h3 data-i18n="gear.combos">Комбики Marshall и Ampeg</h3>
+          <p data-i18n="gear.combosNote">Гитара и бас в трёх комнатах</p>
+        </div>
+        <div class="gear-item" data-reveal data-reveal-delay="120">
+          <h3 data-i18n="gear.mixer">Пульт Behringer, 16 каналов</h3>
+          <p data-i18n="gear.mixerNote">Комната C, полное подключение</p>
+        </div>
+        <div class="gear-item" data-reveal data-reveal-delay="180">
+          <h3 data-i18n="gear.monitors">Вокальные мониторы</h3>
+          <p data-i18n="gear.monitorsNote">До четырёх точек в большой комнате</p>
+        </div>
+        <div class="gear-item" data-reveal data-reveal-delay="240">
+          <h3 data-i18n="gear.mics">Микрофоны Shure</h3>
+          <p data-i18n="gear.micsNote">Со стойками и кабелями</p>
+        </div>
+        <div class="gear-item" data-reveal data-reveal-delay="300">
+          <h3 data-i18n="gear.keys">Клавиши Yamaha</h3>
+          <p data-i18n="gear.keysNote">Плюс интерфейс и наушники</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- НОЧЬ ================================================================ -->
+  <section class="section section--tight night-band">
+    <div class="container night-band__inner">
+      <h2 data-i18n="night.title">В 23:00 цена падает. Соседей у нас нет.</h2>
+      <p data-i18n="night.text">Подвал стоит в отдельном цехе старого завода. Ближайшее жильё — за оградой, в трёхстах метрах. Ночная смена идёт в полную громкость и стоит на четверть дешевле дневной.</p>
+      <a class="btn" href="rooms.html?time=night" data-i18n="night.cta">Занять ночной слот</a>
+    </div>
+  </section>
+
+  <!-- ТАРИФЫ КРАТКО ======================================================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title" data-i18n="pricingBlock.title">Цены без звёздочек</h2>
+        <a class="btn btn--ghost btn--sm" href="pricing.html" data-i18n="pricingBlock.more">Все тарифы</a>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" data-reveal>
+          <p class="eyebrow" data-i18n="pricingBlock.hour">Час</p>
+          <p class="pass__price"><span data-price-hour>—</span></p>
+          <p class="muted" data-i18n="pricingBlock.hourNote">Днём, с 10:00 до 17:00</p>
+        </div>
+        <div class="card" data-reveal data-reveal-delay="70">
+          <p class="eyebrow" data-i18n="pricingBlock.night">Ночь</p>
+          <p class="pass__price acid"><span data-price-night>—</span></p>
+          <p class="muted" data-i18n="pricingBlock.nightNote">С 23:00 до 06:00, минус 25%</p>
+        </div>
+        <div class="card" data-reveal data-reveal-delay="140">
+          <p class="eyebrow" data-i18n="pricingBlock.pass">Абонемент</p>
+          <p class="pass__price"><span data-price-pass>—</span></p>
+          <p class="muted" data-i18n="pricingBlock.passNote">16 часов в месяц, экономия 160 zł</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СТУДИЯ ============================================================== -->
+  <section class="section section--alt" id="studio">
+    <div class="container">
+      <div class="studio-band" data-reveal>
+        <figure class="gallery__figure">
+          <div class="poster poster--wide poster--photo">
+            <img src="assets/img/rooms/studio-sm.jpg"
+                 srcset="assets/img/rooms/studio-sm.jpg 640w, assets/img/rooms/studio-lg.jpg 1280w"
+                 sizes="(min-width: 860px) 45vw, 100vw"
+                 width="1280" height="720" loading="lazy" decoding="async"
+                 alt="Аппаратная студии: большой пульт, мониторы и окно в зал записи" data-i18n-attr="alt:studio.photoAlt">
+          </div>
+          <figcaption class="gallery__credit" data-credit="studio"></figcaption>
+        </figure>
+        <div class="studio-band__content">
+          <h2 data-i18n="studio.title">Студия записи</h2>
+          <p data-i18n="studio.text">Записать демо, свести трек, снять живую репетицию на два микрофона. Работаем с тем, что вы играете, а не с тем, что «сейчас модно».</p>
+          <p class="mono acid" data-i18n="studio.price">120 zł/час со звукорежиссёром</p>
+          <a class="btn btn--primary" href="about.html#contacts" data-i18n="studio.cta">Записать демо</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОТЗЫВЫ ============================================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title" data-i18n="reviews.title">Что говорят группы</h2>
+        <div class="chips">
+          <button class="icon-btn" type="button" data-reviews-nav="prev" aria-label="Предыдущий отзыв" data-i18n-attr="aria-label:reviews.prev">‹</button>
+          <button class="icon-btn" type="button" data-reviews-nav="next" aria-label="Следующий отзыв" data-i18n-attr="aria-label:reviews.next">›</button>
+        </div>
+      </div>
+
+      <div class="reviews" data-reviews></div>
+    </div>
+  </section>
+
+  <!-- FAQ ================================================================= -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title" data-i18n="faq.title">Вопросы</h2>
+      </div>
+      <div class="accordion" id="faq" data-faq></div>
+    </div>
+  </section>
+
+  <!-- КАК ДОБРАТЬСЯ ======================================================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title" data-i18n="map.title">Как добраться</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="map-placeholder" data-reveal>
+          <span class="map-pin" aria-hidden="true">◉</span>
+          <span data-i18n="map.placeholder">Здесь будет карта</span>
+          <span class="mono" data-contact="address">ул. Фабрична 12, Вроцлав</span>
+        </div>
+
+        <div data-reveal data-reveal-delay="80">
+          <div class="poster poster--wide" role="img" aria-label="Фото входа">
+            <span class="poster__letter" aria-hidden="true">IN</span>
+            <span class="poster__note" data-i18n="map.photoPlaceholder">Фото входа</span>
+          </div>
+          <p style="margin-top:1rem" data-i18n="map.note">Вход со двора. Чёрная дверь без вывески, слева от ворот. Если стоите перед фасадом с окнами — обойдите здание.</p>
+          <p class="mono muted"><span data-i18n="map.hoursTitle">Часы работы</span>: <span data-contact="hours">10:00 — 06:00</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ПОДВАЛ ================================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <span class="logo">
+          <span class="logo__mark" aria-hidden="true" data-i18n="brand.mark">Г</span>
+          <span data-i18n="brand.name">ГУЛ</span>
+        </span>
+        <p class="muted" style="margin-top:0.75rem" data-i18n="brand.tagline">Репбаза и студия · Вроцлав</p>
+      </div>
+
+      <div>
+        <h3 data-i18n="footer.nav">Разделы</h3>
+        <ul>
+          <li><a href="rooms.html" data-i18n="nav.rooms">Комнаты</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Тарифы</a></li>
+          <li><a href="index.html#studio" data-i18n="nav.studio">Студия</a></li>
+          <li><a href="about.html" data-i18n="nav.contacts">Контакты</a></li>
+          <li><a href="about.html#rules" data-i18n="common.rulesLink">Правила базы</a></li>
+          <li><a href="credits.html" data-i18n="common.photoCredits">Авторы фото</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 data-i18n="footer.contacts">Контакты</h3>
+        <ul>
+          <li><a class="mono" href="tel:+48500000000" data-contact="phone">+48 500 000 000</a></li>
+          <li><a class="mono" href="mailto:hello@gul.example" data-contact="email">hello@gul.example</a></li>
+          <li><a class="mono" href="https://instagram.com/" rel="noopener noreferrer" target="_blank" data-contact="instagram">@gul.wroclaw</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 data-i18n="footer.hours">Часы работы</h3>
+        <p class="mono" data-contact="hours">10:00 — 06:00</p>
+        <p class="mono muted" data-contact="address">ул. Фабрична 12, Вроцлав</p>
+      </div>
+    </div>
+
+    <p class="demo-notice" style="margin-top:2rem" data-i18n="common.demoNotice">Демонстрационная работа. Занятость, адрес и телефон — заглушки, заявки никуда не отправляются. Фотографии — свободные снимки других студий с Wikimedia Commons.</p>
+
+    <div class="site-footer__bottom">
+      <span>© <span data-year>2026</span> <span data-i18n="brand.name">ГУЛ</span></span>
+      <span data-i18n="footer.rights">Все права защищены</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data/rooms.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/booking.js"></script>
+<script src="assets/js/cards.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>

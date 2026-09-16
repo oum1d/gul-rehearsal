@@ -1,0 +1,280 @@
+/* ============================================================================
+   ГУЛ — токены, сброс, типографика
+   ----------------------------------------------------------------------------
+   Тёмная тема единственная и намеренно: сайт открывают ночью, в подвале, с
+   выкрученной вниз яркостью. Светлая версия потребовала бы отдельной работы
+   с контрастом штриховки занятых слотов — см. README, раздел «Ограничения».
+
+   Контраст проверен по WCAG 2.2 AA:
+       text   #F2F0EA на #0E0E0E → 17.4:1     на #2A2A2A → 12.6:1
+       muted  #9E998E на #0E0E0E →  6.8:1     на #2A2A2A →  5.1:1
+       acid   #E8FF3A на #0E0E0E → 16.1:1
+       red    #FF3B2F на #0E0E0E →  5.4:1
+   Ни одна подпись не опускается ниже 4.5:1 — это отдельный критерий приёмки.
+   ============================================================================ */
+
+:root {
+  /* --- цвет --- */
+  --bg:          #0E0E0E;
+  --bg-2:        #161616;
+  --card:        #2A2A2A;
+  --card-2:      #202020;
+  --text:        #F2F0EA;
+  --muted:       #9E998E;
+  --acid:        #E8FF3A;
+  --acid-dim:    #C2D62F;
+  --red:         #FF3B2F;
+  --line:        #3A3A3A;
+  --line-strong: #565656;
+  --black:       #0A0A0A;
+
+  /* --- типографика --- */
+  --font-display: 'Oswald', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+  --font-body:    'Inter', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Consolas', 'Courier New', monospace;
+
+  --fs-hero:  clamp(2.5rem, 11vw, 7rem);
+  --fs-h1:    clamp(2rem, 7vw, 4rem);
+  --fs-h2:    clamp(1.6rem, 5vw, 2.75rem);
+  --fs-h3:    clamp(1.15rem, 3vw, 1.5rem);
+  --fs-body:  clamp(0.95rem, 2.2vw, 1.0625rem);
+  --fs-small: 0.8125rem;
+
+  /* --- сетка и ритм --- */
+  --gap:      clamp(1rem, 3vw, 1.75rem);
+  --pad-x:    clamp(1rem, 4vw, 3rem);
+  --section:  clamp(3rem, 9vw, 6.5rem);
+  --maxw:     1320px;
+
+  /* --- форма --- */
+  --r:        2px;          /* максимум скругления во всём проекте */
+  --bw:       2px;          /* толщина рамок */
+  --tap:      48px;         /* минимальная цель нажатия */
+
+  /* --- движение --- */
+  --fast:     140ms;
+  --base:     200ms;
+  --ease:     cubic-bezier(0.2, 0, 0.1, 1);
+
+  color-scheme: dark;
+}
+
+/* ============================================================================
+   СБРОС
+   ============================================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  overflow-x: hidden;             /* страховка от горизонтального выезда */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Зерно поверх всей страницы: ризограф не бывает стерильным.
+   pointer-events отключены — слой не должен перехватывать нажатия. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+button, input, select, textarea { font: inherit; color: inherit; }
+
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+/* Браузерная рамка fieldset рисует вокруг групп фильтров случайные коробки */
+fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+legend { padding: 0; }
+
+table { border-collapse: collapse; width: 100%; }
+
+/* ============================================================================
+   ТИПОГРАФИКА
+   ============================================================================ */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;        /* отрицательный трекинг, как в афише */
+  line-height: 0.95;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); letter-spacing: -0.01em; line-height: 1.1; }
+
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--acid);
+  text-decoration: none;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 2px;
+}
+a:hover { text-decoration: underline; }
+
+strong { font-weight: 700; }
+
+/* Всё, что число: цена, время, номер брони, метраж */
+.mono, time, .price, .num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+.lead {
+  font-size: clamp(1.0625rem, 2.6vw, 1.375rem);
+  line-height: 1.45;
+  color: var(--text);
+  max-width: 46ch;
+}
+
+.muted { color: var(--muted); }
+.acid  { color: var(--acid); }
+.danger { color: var(--red); }
+
+/* Маркер-подчёркивание: полоса кислотного под словом, как штрих маркером */
+.marker {
+  background-image: linear-gradient(var(--acid), var(--acid));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 100% 0.28em;
+  color: var(--text);
+}
+
+/* ============================================================================
+   ФОКУС И ДОСТУПНОСТЬ
+   ============================================================================ */
+:focus { outline: none; }
+
+:focus-visible {
+  outline: 3px solid var(--acid);
+  outline-offset: 2px;
+}
+
+/* Внутри кислотных кнопок жёлтая обводка не видна — переключаем на белую */
+.btn--primary:focus-visible,
+.slot--picked:focus-visible {
+  outline-color: var(--text);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0; top: -100px;
+  z-index: 10000;
+  background: var(--acid);
+  color: var(--black);
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  transition: top var(--fast) var(--ease);
+}
+.skip-link:focus { top: 0; }
+
+/* ============================================================================
+   РАСКЛАДКА-УТИЛИТЫ
+   ============================================================================ */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+}
+
+.section { padding-block: var(--section); }
+.section--tight { padding-block: calc(var(--section) * 0.6); }
+.section--alt { background: var(--bg-2); }
+
+.section__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--gap);
+  margin-bottom: clamp(1.5rem, 4vw, 2.75rem);
+}
+
+.section__title { max-width: 18ch; }
+
+/* Диагональная штриховка — используется и как декор, и как метка «занято» */
+.hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 5px,
+    var(--line) 5px 7px
+  );
+}
+
+.rule {
+  height: var(--bw);
+  background: var(--line);
+  border: 0;
+  margin: 0;
+}
+
+/* ============================================================================
+   ДВИЖЕНИЕ
+   ----------------------------------------------------------------------------
+   Появление блоков при скролле включает IntersectionObserver, добавляя
+   .is-in. Стартовое состояние ставится классом .reveal только скриптом —
+   если JS не выполнится, контент останется видимым, а не исчезнет навсегда.
+   ============================================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 420ms var(--ease), transform 420ms var(--ease);
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* Печать: зерно, шапка и панели только мешают */
+@media print {
+  body::before, .site-header, .site-footer, .booking-dock { display: none; }
+  body { background: #fff; color: #000; }
+}
